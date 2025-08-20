@@ -12,5 +12,6 @@ interface ResponseInterface
     public function html(string $html): self;
     public function text(string $text): self;
     public function json(array $json): self;
+    public function view(?string $file, mixed $params): self;
     public function send(): void;
 }

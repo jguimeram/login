@@ -68,6 +68,14 @@ class Response implements ResponseInterface
         return $this;
     }
 
+    public function view(?string $file, mixed $params): self
+    {
+        $render = new Render;
+        $view = $render->load($file, $params);
+        $this->setHeaders(self::HEADER_CONTENT_TYPE, self::MIME_HTML);
+        $this->setBodyMessage($view);
+        return $this;
+    }
 
     public function send(): void
     {

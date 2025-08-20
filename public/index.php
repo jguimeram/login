@@ -17,6 +17,11 @@ $router->get('/users', function (Request $request, Response $response) {
     return $response->html('<h1>From Users</h1>');
 });
 
+$router->get('/template', function (Request $request, Response $response) {
+    $params = ["name" => "cris", "role" => "milf"];
+    return $response->view("index", $params);
+});
+
 $router->get('/admin', function (Request $request, Response $response) {
     return ["user" => "admin"];
 });
