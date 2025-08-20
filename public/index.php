@@ -4,6 +4,7 @@ require('../vendor/autoload.php');
 include('../src/helpers/functions.php');
 
 use Login\app\Router;
+use Login\controller\UserController;
 use Login\interfaces\RequestInterface as Request;
 use Login\interfaces\ResponseInterface as Response;
 
@@ -18,8 +19,13 @@ $router->get('/users', function (Request $request, Response $response) {
 });
 
 $router->get('/template', function (Request $request, Response $response) {
-    $params = ["name" => "cris", "role" => "milf"];
+    $params = ["name" => "mia", "role" => "admin"];
     return $response->view("index", $params);
+});
+
+$router->get('/users', function (Request $request, Response $response) {
+    $user = new UserController;
+    $user->index($request, $response);
 });
 
 $router->get('/admin', function (Request $request, Response $response) {
