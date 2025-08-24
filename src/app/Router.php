@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Login\app;
 
 use Throwable;
-use Login\app\Render;
 use Login\app\Request;
 use Login\app\Response;
 
@@ -80,6 +79,7 @@ class Router
                 throw new \InvalidArgumentException('Invalid response type');
             }
         } catch (\Throwable $th) {
+            debug($th, true);
             $response->setStatusCode(500)->text('Internal Server Error')->send();
         }
     }
@@ -89,6 +89,7 @@ class Router
         $method = $this->request->getMethod();
         $path = $this->request->getPath();
 
+        debug($_GET);
 
         foreach ($this->routes[$method] ?? [] as $route => $callback) {
             $pattern = '#^' . preg_replace('/\{(\w+)\}/', '(?P<$1>[^/]+)', $route) . '$#';

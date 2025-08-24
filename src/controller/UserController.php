@@ -12,4 +12,6 @@ class UserController
         $params = ["name" => "cris", "role" => "admin"];
         return $response->view("index", $params);
     }
+
+    public function fetch(Request $request, Response $response, array $params) {}
 }

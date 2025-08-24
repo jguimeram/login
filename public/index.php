@@ -18,7 +18,7 @@ $router->get('/users', function (Request $request, Response $response) {
     return $response->html('<h1>From Users</h1>');
 });
 
-$router->get('/template', function (Request $request, Response $response) {
+$router->get('/register', function (Request $request, Response $response) {
     $params = ["name" => "mia", "role" => "admin"];
     return $response->view("index", $params);
 });
@@ -28,12 +28,15 @@ $router->get('/users', function (Request $request, Response $response) {
     $user->index($request, $response);
 });
 
+$router->post('/post', function (Request $request, Response $response) {});
+
 $router->get('/admin', function (Request $request, Response $response) {
     return ["user" => "admin"];
 });
 
 $router->get('/users/{id}', function (Request $request, Response $response) {
-    return $response->json(["id" => "5"]);
+    $id = $request->getParams();
+    return $response->json(["id" => $id['id']]);
 });
 
 
