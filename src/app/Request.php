@@ -16,7 +16,7 @@ class Request implements RequestInterface
 
     public function __construct()
     {
-        $this->method = $_SERVER['REQUEST_METHOD'];
+        $this->setMethod();
         $this->path = $this->normalize($_SERVER['REQUEST_URI']);
     }
 
@@ -36,6 +36,11 @@ class Request implements RequestInterface
     public function getPath(): string
     {
         return $this->path;
+    }
+
+    public function setMethod()
+    {
+        $this->method = $_SERVER['REQUEST_METHOD'];
     }
 
     public function setParams(array $params)

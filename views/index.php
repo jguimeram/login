@@ -17,7 +17,7 @@
                 Please fill in all required fields correctly.
             </div>
 
-            <form id="registrationForm">
+            <form id="registrationForm" method="POST" action="/register">
                 <div class="form-group">
                     <label class="form-label" for="firstName">First Name</label>
                     <input type="text" id="firstName" name="firstName" class="form-input"
@@ -30,7 +30,7 @@
                         placeholder="Enter your last name" required>
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label class="form-label" for="regEmail">Email Address</label>
                     <input type="email" id="regEmail" name="email" class="form-input"
                         placeholder="Enter your email address" required>
@@ -58,7 +58,7 @@
                         I agree to the Terms of Service and Privacy Policy
                     </label>
                 </div>
-
+ -->
                 <button type="submit" class="submit-btn">Create Account</button>
             </form>
 
@@ -67,9 +67,9 @@
             </div>
 
             <div class="form-footer">
-                <a href="#" class="switch-link" onclick="switchToLogin()">Sign in to your account</a>
+                <a href="#" class="switch-link">Sign in to your account</a>
             </div>
         </div>
     </div>
 
-    <?php include('layouts/footer.php');
+    <?php include('../views/layouts/footer.php') ?>

@@ -23,6 +23,11 @@ $router->get('/register', function (Request $request, Response $response) {
     return $response->view("index", $params);
 });
 
+$router->post('/register', function (Request $request, Response $response) {
+    $user = new UserController;
+    return $user->create($request, $response);
+});
+
 $router->get('/users', function (Request $request, Response $response) {
     $user = new UserController;
     $user->index($request, $response);

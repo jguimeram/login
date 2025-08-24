@@ -13,5 +13,9 @@ class UserController
         return $response->view("index", $params);
     }
 
-    public function fetch(Request $request, Response $response, array $params) {}
+    public function create(Request $request, Response $response)
+    {
+        $method = $request->getMethod();
+        if ($method !== 'POST') $response->setStatusCode(405)->text('Bad Request');
+    }
 }
