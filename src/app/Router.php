@@ -100,7 +100,7 @@ class Router
                     }
                 }
 
-                /*         //set the parameters of the url (id) */
+                /*set the parameters of the url (id) */
                 $this->request->setParams($params);
 
                 $this->executeHandler($callback, $this->request, $this->response);

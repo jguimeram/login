@@ -68,7 +68,7 @@ class Response implements ResponseInterface
         return $this;
     }
 
-    public function view(?string $file, mixed $params): self
+    public function view(string $file, array $params = []): self
     {
         $render = new Render;
         $view = $render->load($file, $params);
