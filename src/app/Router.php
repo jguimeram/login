@@ -88,6 +88,7 @@ class Router
     {
         $method = $this->request->getMethod();
         $path = $this->request->getPath();
+        debug($method, false);
 
         foreach ($this->routes[$method] ?? [] as $route => $callback) {
             $pattern = '#^' . preg_replace('/\{(\w+)\}/', '(?P<$1>[^/]+)', $route) . '$#';

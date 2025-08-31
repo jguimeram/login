@@ -17,7 +17,7 @@
                 Please fill in all required fields correctly.
             </div>
 
-            <form id="registrationForm" method="POST" action="/login/register">
+            <form id="registrationForm" method="POST" action="/login/create">
                 <div class="form-group">
                     <label class="form-label" for="firstName">First Name</label>
                     <input type="text" id="firstName" name="firstName" class="form-input"

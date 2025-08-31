@@ -12,6 +12,8 @@ class Request implements RequestInterface
 
     private string $method;
     private string $path;
+    private array $post;
+    private array $get;
     private array $params = [];
 
     public function __construct()
@@ -38,9 +40,17 @@ class Request implements RequestInterface
         return $this->path;
     }
 
+    public function getPost(string $key, $default = null)
+    {
+        return $this->post[$key] ?? $default;
+    }
+
+
     public function setMethod()
     {
         $this->method = $_SERVER['REQUEST_METHOD'];
+        if ($this->method === 'POST') $this->post = $_POST;
+        if ($this->method === 'GET') $this->get = $_GET;
     }
 
     public function setParams(array $params)

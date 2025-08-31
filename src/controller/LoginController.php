@@ -12,9 +12,9 @@ class LoginController
         $response->view('login/index');
     }
 
-    public function create($request, $response)
+    public function create(Request $request, Response $response)
     {
-        var_dump($request);
+        var_dump($_POST);
     }
 
     public function update($request, $response) {}

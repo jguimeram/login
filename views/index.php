@@ -5,7 +5,7 @@
         <!-- Registration Form -->
         <div class="form-header">
             <h1 class="form-title">Hello, World</h1>
-            <a href="/login" class="form-subtitle">Login</a>
+            <a href="/login/index" class="form-subtitle">Login</a>
         </div>
     </div>
 
